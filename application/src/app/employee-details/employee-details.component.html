@@ -1,0 +1,38 @@
+<nav class="navbar navbar-light bg-white static-top mb-5 shadow">
+    <a class="navbar-brand"> <b> Conference details</b></a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="text" placeholder="Enter Conference Name" aria-label="Search" [(ngModel)]="smile" [ngModelOptions]="{standalone: true}" (input)="Search()"> 
+    </form>
+  </nav>
+  
+  
+  
+<div class="container">
+    <div class="card border-0 shadow my-5">
+    <div class="card-body p-5">
+    <div style="height: auto">
+    <table class="table table-striped">
+    <thead>
+        <tr>
+          <!-- <th scope="col">#</th> -->
+          <th scope="col">Name of the conference</th>
+          <th scope="col">City</th>
+          <th scope="col">Conference website</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let data of employees">
+            <td> {{data.confName}} </td>  
+            <td> {{data.city}} </td> 
+            <td> {{data.confUrl}} </td>
+            <td> {{data.confStartDate}} </td>
+            
+          </tr>
+      </tbody>
+</table>
+ </div>
+
+    </div>
+  </div>
+</div>
