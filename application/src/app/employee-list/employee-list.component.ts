@@ -18,9 +18,18 @@ export class EmployeeListComponent implements OnInit {
   
   
 
+  //ngOnInit(): void {
+   // this._employeeService.getEmployees();
+    // this._employeeService.getEmployees() 
+    // .subscribe(data => this.employees =data)
+  //}
+
   ngOnInit(): void {
-    this._employeeService.getEmployees() 
-    .subscribe(data => this.employees =data)
+
+    this._employeeService.getEmployees().subscribe((data: any[])=>{
+      //console.log(data,'fetched');
+      
+    })  
   }
 
 

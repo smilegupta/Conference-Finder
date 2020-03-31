@@ -1,4 +1,7 @@
 export interface IEmployee{
+      
+
+    
       emailId: string,
       city: string,
       twitter_handle: string,

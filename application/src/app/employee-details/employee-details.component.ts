@@ -15,16 +15,35 @@ import { EmployeeService } from '../employee.service';
 export class EmployeeDetailsComponent implements OnInit {
   smile:string;
   public employees = [];
+public all = [];
+
+
   constructor(private _employeeService:EmployeeService){}
 
   ngOnInit(): void {
-    this._employeeService.getEmployees() 
-    .subscribe(data => this.employees =data)
+ //   this._employeeService.getEmployees() 
+   // .subscribe(data => this.employees =data)
+   this._employeeService.getEmployees().subscribe((data: any[])=>{
+    console.log(data,'details');
+    this.employees.push(data);
+    this.all= [...this.employees[0].free, ...this.employees[0].paid]
+   // console.log(this.all)
+
+    console.log(this.smile)
+   // console.log(Array.isArray(this.employees), 'type is ')
+  })  
+ 
   }
+
   Search(){
-    this.employees = this.employees.filter(res=>{
-      return res.confName.toLocaleLowerCase().match(this.smile.toLocaleLowerCase());
+    console.log(this.smile)
+    if(this.smile == '') {
+      this.all = [...this.employees[0].free, ...this.employees[0].paid]
+    }
+    this.all = this.all.filter(res=>{
+      return res.confName.toLocaleLowerCase().match(this.smile.toLocaleLowerCase()) ;
     });
+  
   }
 
 }
