@@ -1,5 +1,7 @@
 # Conference details Finder
 
+#### It helps to find conference details.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
 
 ## Development server
